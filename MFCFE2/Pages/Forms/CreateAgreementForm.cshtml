@@ -1,0 +1,39 @@
+﻿@page
+@model MFCFE2.Pages.Forms.CreateAgreementFormModel
+@{
+    ViewData["Title"] = "CreateAgreementForm";
+}
+
+<form method="post">
+    <label>Agreement Number</label>
+    <input type="text" asp-for="Agreement.AgreementNumber" />
+    <br />
+    <label>Branch Id</label>
+    <input type="text" asp-for="Agreement.BranchId" />
+    <br />
+    <label>BPKB No</label>
+    <input type="text" asp-for="Agreement.BPKBNo" />
+    <br />
+    <label>Tanggal BPKB In</label>
+    <input asp-for="Agreement.TanggalBPKBIn" />
+    <br />
+    <label>Tanggal BPKB</label>
+    <input asp-for="Agreement.TanggalBPKB" />
+    <br />
+    <label>Faktur No</label>
+    <input type="text" asp-for="Agreement.FakturNo" />
+    <br />
+    <label>Tanggal Faktur</label>
+    <input asp-for="Agreement.TanggalFaktur" />
+    <br />
+    <label>Police No</label>
+    <input type="text" asp-for="Agreement.PoliceNo" />
+    <br />
+    <label>Lokasi Penyimpanan</label>
+    <select id="location" asp-for="Agreement.LocationId" asp-items="@(new SelectList(Model.StorageLocations, "LocationId", "LocationName"))">
+        <option value="" selected disabled>Select Location</option>
+    </select>
+    <br />
+    <button type="submit">Submit</button>
+</form>
+
